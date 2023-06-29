@@ -1,0 +1,340 @@
+/* :root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+} */
+
+
+body {
+  margin: 0
+}
+
+#root {
+  font-family: Google Sans, sans-serif;
+  height: 100vh;
+  display: flex;
+  flex-direction: column
+}
+
+#root :is(h1, h2, h3, h4, h5, h6, p) {
+  margin: 0
+}
+
+#root>header {
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 16px;
+  height: 64px;
+  align-items: center;
+  flex-shrink: 0
+}
+
+#root>header>.logo {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: large;
+  font-weight: 700
+}
+
+#root>header>.logo svg {
+  color: #005ac2
+}
+
+#root>header a {
+  color: #141b2c;
+  text-decoration: none
+}
+
+#root>header nav {
+  display: flex;
+  align-self: stretch
+}
+
+#root>header nav>a {
+  width: 128px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  box-sizing: border-box;
+  border: 4px solid transparent
+}
+
+#root>header nav>a:hover {
+  background-color: #005ac211
+}
+
+#root>header nav>a.active {
+  color: #005ac2;
+  border-bottom: 4px solid #005ac2
+}
+
+#root .products {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  gap: 24px;
+  padding: 16px 32px
+}
+
+#root .products>header {
+  display: flex;
+  padding: 16px 32px;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #005ac211;
+  border-radius: 24px
+}
+
+#root .products>header>section {
+  display: flex;
+  gap: 16px;
+  align-items: center
+}
+
+#root .products>header>section>label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: small
+}
+
+#root .products>header :is(input, select) {
+  height: 24px;
+  padding: 0 4px
+}
+
+#root .products>main {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px
+}
+
+#root .products>main>.product {
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px
+}
+
+#root .products>main>.product>img {
+  max-width: 100%;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  border: solid #005ac211;
+  border-width: 4px 4px 0 4px
+}
+
+#root .products>main>.product>section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  background-color: #005ac211;
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px
+}
+
+#root .products>main>.product>section>h2 {
+  font-size: medium
+}
+
+#root .products>main>.product>section>p {
+  color: #444
+}
+
+#root .products>footer {
+  display: flex;
+  justify-content: center;
+  gap: 16px
+}
+
+#root .products>footer .page-number {
+  background-color: transparent;
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  border: 1px solid #005ac2;
+  color: #005ac2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer
+}
+
+#root .products>footer .page-number:hover {
+  background-color: #005ac222
+}
+
+#root .products>footer .page-number:disabled {
+  background-color: #005ac2;
+  color: #fff
+}
+
+#root>footer {
+  padding: 8px 16px;
+  text-align: center
+}
+
+#root .button {
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px
+}
+
+#root .button:not(.icon-button) {
+  min-width: 96px;
+  padding-inline: 24px
+}
+
+#root .button:not(.icon-button)>svg {
+  margin-left: -4px
+}
+
+#root .button.icon-button {
+  width: 40px
+}
+
+#root .button.button-filled {
+  background-color: #005ac2;
+  color: #fff
+}
+
+#root .button.button-filled:hover {
+  background-color: #005ac2ee
+}
+
+#root .button.button-tonal {
+  background-color: #005ac222;
+  color: #141b2c
+}
+
+#root .button.button-tonal:hover {
+  background-color: #005ac233
+}
+
+#root .button:disabled {
+  background-color: #005ac222 !important;
+  cursor: not-allowed
+}
+
+#root .button>svg {
+  font-size: large
+}
+
+#root .dialog {
+  position: absolute;
+  background-color: #fff;
+  background-image: linear-gradient(#005ac211, #005ac211);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px;
+  border-radius: 24px;
+  box-shadow: 0 0 16px #0004;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 25%
+}
+
+#root .dialog>label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px
+}
+
+#root .dialog>label>input {
+  padding: 0;
+  height: 56px;
+  padding-inline: 16px;
+  font-size: medium
+}
+
+#root :is(input, select) {
+  border: 1px solid #75777f;
+  border-radius: 4px;
+  outline-color: #005ac2
+}
+
+#root div:last-child:has(> button) {
+  margin-top: 8px;
+  display: flex;
+  gap: 8px
+}
+
+#root div:last-child:has(> button)>button:first-child {
+  margin-right: auto
+}
