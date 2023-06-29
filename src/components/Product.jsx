@@ -28,7 +28,7 @@ export default function Product({ id, name, image, price, category, setEditedPro
                     >
                         Edit
                     </Button>
-                    <Button>Beli</Button>
+                    <Button>Hapus</Button>
                 </div>
             </section>
         </div>
